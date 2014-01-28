@@ -31,12 +31,8 @@ public class Main {
 		System.out.println();
 		System.out.println();
 		
-		System.out.print("Basil & Paul's mutual friends: ");
-		System.out.print("[");
-		List<User> mutuals = basil.findMutuals(paul);
-		for (User user: mutuals) {
-			System.out.print(user.name + ", ");
-		}
-		System.out.println("]");
+		System.out.print("Michael's suggested friends: [");
+		michael.suggestFriends();
+		System.out.print("]");
 	}
 }

@@ -33,13 +33,19 @@ public class User {
 		if (friends.size() <= 1) {
 			return;
 		}
+		List<User> suggestedFriends = new ArrayList<User>();
 		User previousFriend = null;
 		for (User friend: friends) {
 			if (previousFriend == null) {
 				previousFriend = friend;
 				continue;
 			}
-			List<User> mutualFriends = findMutuals(previousFriend, friend);
+			for (User mutual : findMutuals(previousFriend, friend)) {
+				if (!mutual.equals(this)) {
+					suggestedFriends.add(mutual);
+					System.out.print(mutual.name);
+				}
+			}
 		}
 	}
 	
